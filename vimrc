@@ -45,3 +45,8 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 colorscheme wombat256mod
+
+
+set ignorecase
+set smartcase
+set incsearch
