@@ -107,3 +107,9 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+
+
+# Custom
+alias rm="echo 'use trash or trash-put'"
+alias trash="trash-put"
