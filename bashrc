@@ -113,3 +113,13 @@ fi
 # Custom
 alias rm="echo 'use trash or trash-put'"
 alias trash="trash-put"
+
+
+#Ubuntu 12.04 global menu fix for gvim 
+alias gvim='UBUNTU_MENUPROXY= gvim'
+
+
+alias gvim="UBUNTU_MENUPROXY=0 gvim 2>/dev/null"
+
+NODE_PATH='/usr/local/lib/jsctags:${NODE_PATH}'
+PATH=/home/yichuan/Downloads/Application/android-sdks/platform-tools:$PATH
