@@ -34,3 +34,4 @@ export PATH=/usr/local/share/npm/bin:/usr/local/bin:/usr/texbin:/usr/bin:/bin:/u
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 
 alias rm="echo Use del, or full path name for rm"
+alias ve="source ~/Documents/env/bin/activate"

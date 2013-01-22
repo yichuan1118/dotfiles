@@ -109,17 +109,32 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 
-
-# Custom
-alias rm="echo 'use trash or trash-put'"
-alias trash="trash-put"
+# 
+if [ $OSTYPE == 'cygwin' ]; then
+	PATH=$PATH:~/D/maven/bin:~/C/Program\ Files/Java/jdk1.7.0_05/bin:~/bin/:~/C/Program\ Files\ \(x86\)/Android/android-sdk/platform-tools/:~/C/Program\ Files\ \(x86\)/Android/android-sdk/tools/:~/C/Program\ Files\ \(x86\)/nodejs
+else
+# Avoid rm
+	alias rm="echo 'use trash or trash-put'"
+	alias trash="trash-put"
+	PATH=$HOME/bin:$HOME/Downloads/Applications/android-sdks/platform-tools:$PATH
+fi
 
 
 #Ubuntu 12.04 global menu fix for gvim 
-alias gvim='UBUNTU_MENUPROXY= gvim'
+# alias gvim='UBUNTU_MENUPROXY= gvim'
+# alias gvim="UBUNTU_MENUPROXY=0 gvim 2>/dev/null"
 
 
-alias gvim="UBUNTU_MENUPROXY=0 gvim 2>/dev/null"
 
-NODE_PATH='/usr/local/lib/jsctags:${NODE_PATH}'
-PATH=/home/yichuan/Downloads/Application/android-sdks/platform-tools:$PATH
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+        export TERM='xterm-256color'
+else
+        export TERM='xterm-color'
+fi
+
+
+# zenburn
+
+function EXT_COLOR () { echo -ne "\033[38;5;$1m"; }
+export LS_COLORS='di=38;5;108:fi=00:*svn-commit.tmp=31:ln=38;5;116:ex=38;5;186'
+export PS1='`EXT_COLOR 187`\u@\h`EXT_COLOR 174` \w \n\[\033[01;34m\]> \[\033[00m\]'
